@@ -1,0 +1,3 @@
+<?php
+require_once('../_controllers/controller.functionsClass.php');$connect=new functionsClass();require_once('../_config/config.connDB.php');if(isset($_POST['idToolsDetailsPicture'])){$idUserToolsArray=$_POST['idToolsDetailsPicture'];foreach($idUserToolsArray as $idToolsDetailsPicture){$connect->set('sql','SELECT PictureAccount FROM tb_users WHERE IdGroup="'.$idToolsDetailsPicture.'"');$connect->conectar();$connect->selecionarDB();$result=$connect->executar();if(mysql_num_rows($result)==0){print('Error_Query');exit;}if(mysql_num_rows($result) != 0){while($row=mysql_fetch_assoc($result)){$PictureAccount=$row['PictureAccount'];print($PictureAccount);}}mysql_close($connect->conectar());}}else{print('Var idUserCheck empty!');exit;}
+?>

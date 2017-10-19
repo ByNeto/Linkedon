@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Linked On Map App</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<link rel="apple-touch-icon" href="../_library/images/icons/radar.gif"/>
+<link rel="apple-touch-startup-image" href="../_library/images/icons/radar.gif"/>
+<meta name="author" content="ByNeto"/>
+<meta name="description" content="Linked On Map App"/>
+<meta name="keywords" content="Linked On Map App"/>
+<link type="text/css" rel="stylesheet" href="_library/css/style.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="_library/css/idangerous.swiper.css" media="all"/>
+</head>
+<body onload="CheckUserAndLink();">
+<div id="header">
+	<div class="gohome radius20"><a href="#"><img src="_library/images/icons/home.png" alt="Inicio" title="Inicio" /></a></div>
+	<div class="gomenu radius20"><a href="https://linkedon.000webhostapp.com/"><img src="_library/images/icons/closed.png" alt="Fechar" title="Fechar"/></a></div>
+</div>
+<div id="msg"></div>
+<div id="msgAviso" style="display:none;" class="alert alert-danger" role="alert"><strong>Botão desabilitado pelo sistema!</strong></div>
+<div id="alertGps"><h2 class="fontAlertGps">Permitir a localização</h2><center><img class="avatar" src="_library/images/icons/maker.png" alt="" title=""/></center><h4 class="fontAlertGps"><strong>LinkedOn Map App</strong> e uma ferramenta de Geolocalização que utiliza dados de localização fornecidos pelo Browser de seu sistema.</h4><p class="fontAlertGps">(Nós valorizamos sua privacidade - não acessamos sua localização sem que haja sua permissão.)</p><center><a href="#" onclick="getLocation();" class="button_submit_white"/>Aceitar</a><p><a href="#" class="font_white_alert"/>Agora não</a></p></center><p class="fontAlertGps">Saiba mais em <strong>Termos de Uso</strong></p></div>
+<div class="swiper-container swiper-parent">
+<div class="swiper-wrapper">
+<!--Menu Ini-->
+<div class="swiper-slide sliderbg_menu">
+	<div class="swiper-container swiper-nested">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="slide-inner">
+					<div class="logo"><a href="#"><img src="_library/images/logo/lg.png" alt="Linked On Map App" title="ROYAL FRIENDS APP" border="0" /></a></div>
+					<div class="menu">
+					<ul>
+<li><a href="#" onclick="swiperParent.swipeTo(1);"><img src="_library/images/icons/maker.png" title=""/><span>LINKED MAP</span></a></li>
+<li><a href="#" onclick="swiperParent.swipeTo(2);SelectDataFriendsUser();"><img src="_library/images/icons/friends.png" alt="" title=""/><span>AMIGOS</span></a></li>
+<li><a href="#" onclick="swiperParent.swipeTo(3);"><img src="_library/images/icons/services.png" title=""/><span>EDITAR</span></a></li>
+<li><a href="#" onclick="swiperParent.swipeTo(4);"><img src="_library/images/icons/search.png" title=""/><span>LUGARES</span></a></li>
+<li><a href="#" onclick="swiperParent.swipeTo(5);"><img src="_library/images/icons/commerce.png" title=""/><span>EMPRESA</span></a></li>
+<li><a href="#" onclick="swiperParent.swipeTo(6);"><img src="_library/images/icons/transport.png" title=""/><span>ROTAS</span></a></li>
+					</ul>
+					<div class="clearfix"></div>
+					<div class="copyright"><p><a href="#" target="_blank">Termos de uso</a><br>Linked On Map App - Version 1.0 - <a href="#" target="_blank">ByNeto</a></p></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-scrollbar"></div>
+	</div>
+</div>
+<!--Menu End-->
+<!--LINKED MAP Ini-->
+<div class="swiper-slide sliderbg">
+	<div class="swiper-container swiper-nested1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="slide-inner">
+					<div class="pages_container">
+						<h2 class="page_title">LINKED MAP</h2>
+							<div class=" radius4">
+								<section><article><div class="map_box green radius4"><center><div id="map" class="map"><div id="carregando"></div></div></center></div></article></section>
+							</div>
+						<div class="clearfix"></div>
+						<div class="scrolltop radius20"><a href="#" class="scrolltop1"><img src="_library/images/icons/top.png" alt="Go on top" title="Go on top" /></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-scrollbar1"></div>
+	</div>
+</div>
+<!--LINKED MAP End-->
+<!--Page 2 content-->
+<div class="swiper-slide sliderbg">
+	<div class="swiper-container swiper-nested2" id="teste2">
+		<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="slide-inner">
+						<div class="pages_container">
+							<h2 class="page_title">AMIGOS</h2>
+							<div class="menu_friends"><form action="" method="post"><input type="text" class="search" name="search" placeholder=" Procurar Amigos..."></form></div>
+							<hr></hr>
+							<div id="linked_friends"></div>
+							<div class="menu_friends_footer"><a href="#" class="button_submit" onclick="SelectDataFriendsUser();">Listar Amigos</a></div>
+							<div class="space"></div>
+							<div class="scrolltop radius20"><a href="#" class="scrolltop2"><img src="_library/images/icons/top.png" alt="Go on top" title="Go on top" /></a></div>
+						<div class="space_footer"></div>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="swiper-scrollbar2"></div>
+	</div>
+</div>
+<!--Page 3 content-->
+<div class="swiper-slide sliderbg">
+	<div class="swiper-container swiper-nested3">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="slide-inner">
+					<div class="pages_container">
+						<h2 class="page_title">EDITAR</h2>
+						<div class="menu">
+						<ul>
+							<div class="trigger_box">
+								<li><a href="#" onclick="ToolsDetailsPicture();"><img src="_library/images/icons/photos.png" alt="" title=""/><span>IMAGEM</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+							<center>
+							<div id="loadingPicture"></div>
+								<form id="formPicture" name="formPicture" method="post" enctype="multipart/form-data">
+								<label for="uploadPictures"><div id="detailsPictureShow"></div><p class="font_white_picture"><strong>Clique na Imagem para alterá-la</strong>.</p></label>
+									<input type="file" id="uploadPictures" name="image" accept="image/*"/>
+								</form>
+							</center>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#" onclick="ToolsDetailsAvatar();"><img src="_library/images/icons/avatar.png" title=""/><span>AVATAR</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+							<form id="" name="" method="post">
+								<center><div id="avatar_icons"></div></center>
+								<div class="space"></div>
+								<center><a href="#" class="button_submit"/>Alterar</a></center>
+							</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#" onclick="ToolsDetailsName();"><img src="_library/images/icons/name_card.png" title="NOME USUARIO"/><span>NOME</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form method="POST">
+									<center><div id="load_name_user"></div></center>
+									<center><input type="text" id="name_user" name="name_user" class="form_input" placeholder="" autocomplete="off" required></input></center>
+									<center><input type="submit" class="button_submit" id="button_name_user" onclick="ToolsDetailsNameEdit();" value="Editar Nome"></input></center>
+									<center><span id="button_name_user_submit"></span></center>
+								</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#" onclick="return ToolsDetailsMail();"><img src="_library/images/icons/email.png" title="EMAIL USUARIO"/><span>EMAIL</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><input required type="email" id="mail_user" name="mail_user" class="form_input" placeholder=""/></center>
+									<center><input type="submit" class="button_submit" value="Alterar"/></input></center>
+								</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#"><img src="_library/images/icons/senha.png" title="SENHA USUARIO"/><span>SENHA</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><input required type="text" id="" name="" class="form_input" placeholder="#########"/></center>
+									<center><input type="submit" class="button_submit" value="Alterar"/></input></center>
+								</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#"><img src="_library/images/icons/excluir.png" title="EXCLUIR CONTA"/><span>EXCLUIR</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><p class="font_white">Deseja realmente excluir a conta?</p></center>
+									<center><a href="#" class="button_submit"/>Sim</a> &nbsp; <a href="#" class="button_submit_red"/>Não</a></center>
+								</form>
+							</div>
+						</ul>
+						</div>
+						<div class="space_footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-scrollbar3"></div>
+	</div>
+</div>
+<!--Page 3 content END-->
+<!--Page 4 content-->
+<div class="swiper-slide sliderbg">
+	<div class="swiper-container swiper-nested4">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="slide-inner">
+					<div class="pages_container">
+					<h2 class="page_title">Em desenvolvimento</h2>
+						<div class="clearfix"></div>
+						<div class="scrolltop radius20"><a href="#" class="scrolltop5"><img src="_library/images/icons/top.png" alt="Go on top" title="Go on top" /></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-scrollbar4"></div>
+	</div>
+</div>
+<!--Page 5 content-->
+<div class="swiper-slide sliderbg">
+	<div class="swiper-container swiper-nested5">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="slide-inner">
+					<div class="pages_container">
+						<h2 class="page_title">EMPRESA</h2>
+						<div class="menu">
+						<ul>
+							<div class="trigger_box">
+								<li><a href="#" onclick="ToolsDetailsPicture();"><img src="_library/images/icons/photos.png" alt="" title=""/><span>IMAGEM</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+							<center>
+							<div id="loadingPicture"></div>
+								<form id="" name="" method="post" enctype="multipart/form-data">
+								<label for="uploadPictures"><div id="detailsPictureShow"></div><p class="font_white_picture"><strong>Clique na Imagem para alterá-la</strong>.</p></label>
+									<input type="file" id="uploadPictures" name="image" accept="image/*"/>
+								</form>
+							</center>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#" onclick="ToolsDetailsNameCompany();"><img src="_library/images/icons/company.png" title="NOME DA EMPRESA"/><span>NOME</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><input required type="text" id="name_company" name="name_company" class="form_input" placeholder="Nome da Empresa"/></center>
+									<center><span id="button_name_company"></span></center>
+									<center><span id="button_name_company_submit"></span></center>
+								</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#" onclick="return ToolsDetailsMail();"><img src="_library/images/icons/email.png" title="EMAIL USUARIO"/><span>EMAIL</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><input required type="email" id="mail_user" name="mail_user" class="form_input" placeholder=""/></center>
+									<center><input type="submit" class="button_submit" value="Alterar"/></input></center>
+								</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#" onclick="ToolsDetailsPhoneCompany();"><img src="_library/images/icons/phone.png" title="FONE DE CONTATO"/><span>FONE</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><input required type="text" id="phone_company" name="phone_company" class="form_input" placeholder="+55(XX)XXXXX-XXXX"/></center>
+									<center><span id="button_phone_company"></span></center>
+									<center><span id="button_phone_company_submit"></span></center>
+								</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#"><img src="_library/images/icons/www.png" title="SITE DA EMPRESA"/><span>SITE</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><input required type="url" id="url_company" name="url_company" class="form_input" placeholder="www.minhaempresa.com.br"/></center>
+									<center><input type="submit" class="button_submit" value="Alterar"/></input></center>
+								</form>
+							</div>
+							<div class="trigger_box">
+								<li><a href="#"><img src="_library/images/icons/maker.png" title="LOCALIZAÇÃO DA EMPRESA"/><span>ENDEREÇO</span></a></li>
+							</div>
+							<div class="toggle_container_box">
+								<form id="" name="" method="post">
+									<center><p class="font_white">Inserir Endereço Manualmente ou Geolocalização?</p></center>
+									<center><a href="#" class="button_submit"/>Manualmente</a> &nbsp; <a href="#" class="button_submit_red"/>Geolocalização</a></center>
+								</form>
+							</div>
+						</ul>
+						</div>
+						<div class="space_footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-scrollbar5"></div>
+	</div>
+</div>
+<!--Page 6 content-->
+<div class="swiper-slide sliderbg">
+	<div class="swiper-container swiper-nested6">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="slide-inner">
+				<div class="pages_container">
+					<h2 class="page_title">Em desenvolvimento</h2>
+				</div>
+				<div class="scrolltop radius20"><a href="#" class="scrolltop6"><img src="_library/images/icons/top.png" alt="Go on top" title="Go on top" /></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="swiper-scrollbar6"></div>
+</div>
+</div>
+	</div>
+<div class="pagination"></div>
+</div>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA1IrJKFAhf160nbUQtgwtF8sWAwQoOO6k"></script>
+<script type="text/javascript" src="_library/js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="_library/js/noBack.js"></script>
+<script type="text/javascript" src="_library/js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="_library/js/idangerous.swiper-2.1.min.js"></script>
+<script type="text/javascript" src="_library/js/idangerous.swiper.scrollbar-2.1.js"></script>
+<script type="text/javascript" src="_library/js/jquery.tabify.js"></script>
+<script type="text/javascript" src="_library/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="_library/js/code.js"></script>
+<script type="text/javascript" src="_views/view.CheckUserAndLink.js"></script>
+<script type="text/javascript" src="_views/view.InsertPositionCoords.js"></script>
+<script type="text/javascript" src="_views/view.SelectDataMapsUsers.js"></script>
+<script type="text/javascript" src="_views/view.SelectDataFriendsUser.js"></script>
+<script type="text/javascript" src="_views/view.ToolsDetailsPicture.js"></script>
+<script type="text/javascript" src="_views/view.ToolsDetailsAvatar.js"></script>
+<script type="text/javascript" src="_views/view.ToolsDetailsName.js"></script>
+<script type="text/javascript" src="_views/view.ToolsDetailsNameEdit.js"></script>
+<script type="text/javascript" src="_views/view.ToolsDetailsMail.js"></script>
+<script>
+function ToolsDetailsNameCompany(){
+	$("#button_name_company_submit").hide();
+	$("#button_name_company").html('<input type="submit" class="button_submit" id="" onclick="name_company_submit();" value="Editar Nome"/></input>').show();
+}
+
+function name_company_submit(){
+	$("#button_name_company").hide();
+	$("#button_name_company_submit").html('<input type="submit" class="button_submit_red" id="" onclick="submit_name_company();" value="Salvar Nome"/></input>').show();
+}
+function submit_name_company(){
+if(document.getElementById('name_company').value == ""){
+document.getElementById('name_company').required == true;
+}
+
+}
+</script>
+<script>
+function ToolsDetailsPhoneCompany(){
+	$("#button_phone_company_submit").hide();
+	$("#button_phone_company").html('<input type="submit" class="button_submit" id="" onclick="name_company_submit();" value="Editar Fone"/></input>').show();
+}
+
+function name_company_submit(){
+	$("#button_phone_company").hide();
+	$("#button_phone_company_submit").html('<input type="submit" class="button_submit_red" id="" onclick="submit_name_company();" value="Salvar Fone"/></input>').show();
+}
+function submit_name_company(){
+if(document.getElementById('phone_company').value == ""){
+document.getElementById('phone_company').required == true;
+}
+
+}
+</script>
+<script type="text/javascript">
+$("#uploadPictures").on('change',function(){
+var data=new Date();var mes=data.getMonth() + 1;timezone=data.getFullYear()+''+data.getDate()+''+mes+''+data.getHours()+''+data.getMinutes()+''+data.getSeconds();
+var idUserPicture= [],sh;var shes=window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+for(var i = 0; i < shes.length; i++){sh=shes[i].split('#');idUserPicture.push(sh[0]);idUserPicture[sh[0]] = sh[1];
+if(idUserPicture=='https://linkedon.000webhostapp.com/app.html' || idUserPicture=='https://linkedon.000webhostapp.com/app.html?' || idUserPicture=='https://linkedon.000webhostapp.com/app.html#' || idUserPicture=='https://linkedon.000webhostapp.com/app.html?#' || idUserPicture==''){window.location.href='https://linkedon.000webhostapp.com/';return false;}}
+var formdata=new FormData($("#formPicture")[0]);
+$.ajax({url:'_models/model.ToolsUploadPicture.php?idUserPicture='+idUserPicture+'&timezone='+timezone,type:"POST",data:formdata,contentType:false,cache:false,processData:false,resetForm:true,clearForm:true,
+beforeSend:function(){$("#msg").html("<div class='alert alert-danger'><strong>Realizando upload da imagem...</strong></div>").show().slideDown("slow");},
+success:function(data){
+switch(data){
+case 1:
+	$("#msg").html("<div class='alert alert-danger'><strong>Error ao Update tb_picture!</strong></div>").show().slideDown("slow").delay(5000).slideUp("slow");return false;
+break;
+case 2:
+	$("#msg").html("<div class='alert alert-danger'><strong>Imagem não enviada!</strong></div>").show().slideDown("slow").delay(5000).slideUp("slow");return false;
+break;
+case 3:
+	$("#msg").html("<div class='alert alert-danger'><strong>Extensão inválida!</strong></div>").show().slideDown("slow").delay(5000).slideUp("slow");return false;
+break;
+case 4:
+	$("#msg").html("<div class='alert alert-danger'><strong>Imagem não carregada!</strong></div>").show().slideDown("slow").delay(5000).slideUp("slow");return false;
+break;
+case 5:
+	$("#msg").html("<div class='alert alert-danger'><strong>idUserPicture Empty!</strong></div>").show().slideDown("slow").delay(5000).slideUp("slow");return false;
+break;
+default:$("#detailsPictureShow").html("<img class='picture_file' src='"+data+"'/>").show();$("#msg").html("<div class='alert alert-success'><strong>Upload realizado com sucesso!</strong></div>").show().slideDown("slow").delay(5000).slideUp("slow");return false;
+break;
+}},
+error:function(data){$("#msg").html("<div class='alert alert-danger'><strong>"+data+"</strong></div>").show().slideDown("slow").delay(6000).slideUp("slow");return false;}
+});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Linked On Map App</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<link rel="apple-touch-icon" href="../_library/images/icons/radar.gif"/>
+<link rel="apple-touch-startup-image" href="../_library/images/icons/radar.gif"/><!----320x460.png--->
+<meta name="author" content="ByNeto"/>
+<meta name="description" content="Linked On Map App"/>
+<meta name="keywords" content="Linked On Map App"/>
+<link type="text/css" rel="stylesheet" href="_library/css/style_login.css" media="all"/>
+</head>
+<body class="bg">
+<div id="msgAviso" style="display:none;" class="alert alert-danger" role="alert"><strong>Botão desabilitado pelo sistema!</strong></div>
+<div class="main">
+<center><img src="_library/images/logo/lg.png" class="logo"></img></center>
+<div class="main-info">
+<div class="sap_tabs">
+<div id="horizontalTab" style="display:block;width:100%;margin:0px;box-shadow:3px 3px 6px rgba(0,0,0,0.5);-moz-box-shadow:3px 3px 6px rgba(0,0,0,0.5);-webkit-box-shadow:3px 3px 6px rgba(0,0,0,0.5);">
+<ul class="resp-tabs-list"><li class="resp-tab-item" aria-controls="tab_item-0"><h2><span>Entrar</span></h2></li><li class="resp-tab-item" aria-controls="tab_item-1"><span>Cadastrar</span></li></ul>
+<div class="clear"></div>
+<div class="resp-tabs-container">
+<div class="resp-tab-content" aria-labelledby="tab_item-0">
+<div class="agileits-login">
+<form action="" name="name_formSubmitLogin" method="post" id="id_formSubmitLogin">
+<p id="EmailResponsibleMsgErrorA"></p><p id="EmailResponsibleMsgErrorB"></p><p id="EmailResponsibleMsgErrorC"></p>
+<input type="email" id="EmailResponsibleLogin" class="Email" name="EmailResponsibleLogin" placeholder="Insira seu Email" required=""/>
+<p id="PasswordAccountMsgErrorA"></p>
+<input type="password" id="PasswordAccountLogin" class="Password" name="PasswordAccountLogin" placeholder="Insira sua Senha" required=""/>
+<div class="wthree-text"><ul><li><a href="#">Esqueceu a Senha?</a></li></ul><div class="clear"></div></div>
+<div id="formSubmitLogin"></div>
+<div class="w3ls-submit"><div class="submit-text"><input type="button" value="Entrar" onclick="formSubmitLogin();"/></div></div>
+</form>
+</div>
+</div>
+<div class="resp-tab-content" aria-labelledby="tab_item-1">
+<div class="login-top sign-top">
+<div class="agileits-login">
+<form action="" name="name_form2" method="post" id="id_form2">
+<center>
+<label class="rad"><input type="radio" name="Sexo" id="Sexo" value="0" /><i><img src="_library/images/icons/male.png" alt="Homem"/></i></label>
+<label class="rad"><input type="radio" name="Sexo" id="Sexo" value="1" /><i><img src="_library/images/icons/female.png" alt="Mulher"/></i></label>
+<p id="SexoMsgError1"></p>
+</center>
+<div class="clear"><br></div>
+<p id="NameResponsibleMsgError1"></p><p id="NameResponsibleMsgError2"></p><p id="NameResponsibleMsgError3"></p><p id="NameResponsibleMsgError4"></p>
+<input type="text" id="NameResponsible" name="NameResponsible" placeholder="Insira seu Nome" required="">
+<p id="EmailResponsibleMsgError1"></p><p id="EmailResponsibleMsgError2"></p><p id="EmailResponsibleMsgError3"></p>
+<input type="email" id="EmailResponsible" class="Email" name="EmailResponsible" placeholder="Insira seu Email" required=""/>
+<p id="PhoneNumbersMsgError1"></p>
+<input type="tel" id="PhoneNumbers" name="PhoneNumbers" onkeyup="mascara(this,mtel);" placeholder="(XX) XXXXX-XXXX" required="">
+<p id="PasswordAccountMsgError1"></p><p id="PasswordAccountMsgError2"></p><p id="RepeatPasswordMsgError2"></p>
+<input type="password" id="PasswordAccount" class="Password" name="PasswordAccount" placeholder="Insira uma Senha de 6 digitos" required=""/>
+<p id="RepeatPasswordMsgError1"></p><p id="RepeatPasswordMsgError2"></p>
+<input type="password" id="RepeatPassword" class="RepeatPassword" name="RepeatPassword" placeholder="Confirme a Senha" required=""/>
+<p id="TermosMsgError1"></p>
+<label class="ckb"><input type="checkbox" name="" id="Termos" value="1"/><i></i> <span>Aceita os termos de uso?</span></label>
+<div id="msg_return"></div>
+<div class="w3ls-submit"><div class="submit-text"><input type="button" value="Cadastrar" onclick="return formSubmit();"></div></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<center>
+<a class="social_img" href="whatsapp://send?text=Crie sua conta e participe da maior rede de Geolocalização do mundo: https://linkedon.000webhostapp.com/" target="_blank"><img src="../_library/images/icons/whatsapp.png" alt="Recomende este produto pelo WhatsApp" title="Recomende este produto pelo WhatsApp"></a>
+<a class="social_img" href="https://plus.google.com/share?url=https%3A%2F%2Flinkedon.000webhostapp.com%2F" target="_blank"><img src="../_library/images/icons/google.png" alt="Recomende este produto pelo Google+" title="Recomende este produto pelo Google+"></a>
+<a class="social_img" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flinkedon.000webhostapp.com%2F" target="_blank"><img src="../_library/images/icons/facebook.png" alt="Recomende este produto pelo Facebook" title="Recomende este produto pelo Facebook"></a>
+<a class="social_img" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flinkedon.000webhostapp.com%2F&amp;text=App&amp;hashtags=app,LinkedOn%20Map%20App%20sua%20rede%20de%20contatos%20ligada%20por%20apenas%20um%20toque" target="_blank"><img src="../_library/images/icons/twitter.png" alt="Recomende este produto pelo Twitter" title="Recomende este produto pelo Twitter"></a>
+<a class="social_img" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Flinkedon.000webhostapp.com%2F&amp;title=LinkedOn%20Map%20App%20sua%20rede%20de%20contatos%20ligada%20por%20apenas%20um%20toque" target="_blank"><img src="../_library/images/icons/linkedin.png" alt="Recomende este produto pelo Linkdin" title="Recomende este produto pelo Linkdin"></a>
+</center>
+<div class="copyright"><p><a href="#" target="_blank">Termos de uso</a><br>Linked On Map App - Version 1.0 - <a href="#" target="_blank">ByNeto</a></p></div>
+</div>
+</body>
+<script type="text/javascript" src="_library/js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="_library/js/noBack.js"></script>
+<script type="text/javascript" src="_library/js/addEventListener.js"></script>
+<script type="text/javascript" src="_library/js/easyResponsiveTabs.js"></script>
+<script type="text/javascript" src="_library/js/easyResponsiveTabsComplement.js"></script>
+<script type="text/javascript" src="_library/js/maskPhone.js"></script>
+<script type="text/javascript" src="_views/view.CheckLoginUsers.js"></script>
+<script type="text/javascript" src="_views/view.InsertRegisterUsers.js"></script>
+</html>
